@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desi Dazzle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/fashion logo.jpg" alt="Desi Dazzle Logo">
+        </div>
+        <h1>Desi Dazzle</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lehenga.html">Lehengas</a></li>
+                <li><a href="kurti.html">Kurtis</a></li>
+                <li><a href="officewear.html">Office Wear</a></li>
+                <li><a href="casualwear.html">Casual Wear</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="mycart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <img src="images/Header9.jpg" alt="Indian Essence">
+        <div class="banner-text"></div>
+    </section>
+    
+    <button class="shop-now" onclick="scrollToProductOverview()">Shop Now</button>
+    
+    <section class="categories">
+        <div class="category">
+            <a href="sarees.html"><img src="images/sarees.jpg" alt="Sarees"></a>
+            <h3><a href="sarees.html">Sarees</a></h3>
+        </div>
+        <div class="category">
+            <a href="lehenga.html"><img src="images/lehenga.jpg" alt="Lehenga"></a>
+            <h3><a href="lehenga.html">Lehengas</a></h3>
+        </div>
+        <div class="category">
+            <a href="kurti.html"><img src="images/kurti.jpg" alt="Kurti"></a>
+            <h3><a href="kurti.html">Kurtis</a></h3>
+        </div>
+        <div class="category">
+            <a href="officewear.html"><img src="images/Office Wear category.jpg" alt="Office Wear"></a>
+            <h3><a href="officewear.html">Office Wear</a></h3>
+        </div>
+        <div class="category">
+            <a href="casualwear.html"><img src="images/jumpsuit category.jpg" alt="Casual Wear"></a>
+            <h3><a href="casualwear.html">Casual Wear</a></h3>
+        </div>
+        <div class="category">
+            <a href="accessories.html"><img src="images/acessories.jpg" alt="Accessories"></a>
+            <h3><a href="accessories.html">Accessories</a></h3>
+        </div>
+    </section>
+
+    <section class="product-overview" id="product-overview">
+        <h2>Product Overview</h2>
+        <div class="filters">
+            <button>All Products</button>
+            <button>Casual Wear</button>
+            <button>Office Wear</button>
+            <button>Bags</button>
+            <button>Shoes</button>
+            <button>Watches</button>
+        </div>
+        <div class="products">
+            <div class="product-item">
+                <img src="images/Dress1.png" alt="Product 1">
+                <h3>Meron frock</h3>
+                <p>Rs.500</p>
+                <button class="add-to-cart" data-name="Meron frock" data-price="500">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/officewear8.png" alt="Product 2">
+                <h3>White Shirt</h3>
+                <p>Rs.400</p>
+                <button class="add-to-cart" data-name="White Shirt" data-price="400">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/saree1.png" alt="Product 3">
+                <h3>Saree</h3>
+                <p>Rs.4000</p>
+                <button class="add-to-cart" data-name="Saree" data-price="4000">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/lehenga1.png" alt="Product 4">
+                <h3>Blue and Green Lehenga</h3>
+                <p>Rs.3000</p>
+                <button class="add-to-cart" data-name="Blue and Green Lehenga" data-price="3000">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/kurti1.png" alt="Product 5">
+                <h3>White Kurti</h3>
+                <p>Rs.1500</p>
+                <button class="add-to-cart" data-name="White Kurti" data-price="1500">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/bag2.png" alt="Product 6">
+                <h3>Brown bag</h3>
+                <p>Rs.700</p>
+                <button class="add-to-cart" data-name="Brown bag" data-price="700">Add to Cart</button>
+            </div>
+        </div>
+        <div id="total-price">
+            Total Price: Rs. 0
+        </div>
+    </section>
+
+    <section class="about-us" id="about-us">
+        <h2>About Us</h2>
+        <p>Indian Essence is a premier destination for traditional and contemporary Indian fashion. Our curated collection features a blend of timeless classics and the latest trends, ensuring that you find the perfect outfit for any occasion. From elegant sarees to chic kurtis and stylish office wear, we offer something for every taste and style. Our commitment to quality and customer satisfaction drives us to provide exceptional service and products that you'll love.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Indian Essence. All rights reserved.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="Product Image">
+            <h3 id="modal-title">Product Title</h3>
+            <p id="modal-price">$0.00</p>
+            <p id="modal-description">This is a great product!</p>
+        </div>
+    </div>
+
+    <div class="message" id="loginMessage" style="display: none;">
+        Please login
+    </div>
+
+    <script>
+        function scrollToProductOverview() {
+            document.getElementById('product-overview').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            const loggedIn = localStorage.getItem('loggedIn');
+            if (!loggedIn) {
+                document.getElementById('loginMessage').style.display = 'block';
+            }
+        };
+
+        function shopNow() {
+            const loggedIn = localStorage.getItem('loggedIn');
+            if (!loggedIn) {
+                document.getElementById('loginMessage').style.display = 'block';
+            } else {
+                scrollToProductOverview();
+            }
+        }
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
